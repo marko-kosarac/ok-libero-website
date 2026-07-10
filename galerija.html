@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerija — OK Libero Bijeljina</title>
+<meta name="description" content="Foto galerija Odbojkaškog kluba Libero iz Bijeljine — utakmice, treninzi, škola odbojke i proslave kluba.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OK Libero Bijeljina">
+<meta property="og:title" content="Galerija — OK Libero Bijeljina">
+<meta property="og:description" content="Foto galerija Odbojkaškog kluba Libero iz Bijeljine — utakmice, treninzi, škola odbojke i proslave kluba.">
+<meta property="og:image" content="https://oklibero.ba/images/pocetna.jpg">
+<meta property="og:url" content="https://oklibero.ba/galerija.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23C62828'/%3E%3Cpath d='M12 2C12 2 8 6 8 12C8 18 12 22 12 22' stroke='%23FFFFFF' stroke-width='1.3' fill='none'/%3E%3Cpath d='M2 12C2 12 6 8 12 8C18 8 22 12 22 12' stroke='%23FFFFFF' stroke-width='1.3' fill='none'/%3E%3Cpath d='M4 5C4 5 8 9 12 9C16 9 20 5 20 5' stroke='%23FFFFFF' stroke-width='1.1' fill='none' opacity='0.7'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="OK Libero logo">
+    OK Libero
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Početna</a>
+    <a href="istorija.html">Istorija</a>
+    <a href="trofeji.html">Trofeji</a>
+    <a href="treneri.html">Treneri</a>
+    <a href="ekipe.html">Ekipe</a>
+    <a href="galerija.html" class="active">Galerija</a>
+    <a href="skola.html">Škola odbojke</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+  <div class="nav-social">
+    <a href="https://instagram.com/odbojkaskiklublibero" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3"/><circle cx="16.5" cy="7.5" r="1" fill="currentColor"/></svg>
+    </a>
+    <a href="https://facebook.com/okliberobijeljina" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"/></svg>
+    </a>
+  </div>
+  <button class="hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Meni">☰</button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html">Početna</a>
+  <a href="istorija.html">Istorija</a>
+  <a href="trofeji.html">Trofeji</a>
+  <a href="treneri.html">Treneri</a>
+  <a href="ekipe.html">Ekipe</a>
+  <a href="galerija.html" class="active">Galerija</a>
+  <a href="skola.html">Škola odbojke</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
+
+<header class="page-header">
+  <h1>Galerija</h1>
+  <p class="intro-text">Trenuci sa utakmica, treninga i klupskih proslava. Kliknite na fotografiju da je otvorite kao album i listajte strelicama.</p>
+</header>
+
+<section class="section">
+
+  <div class="gallery-category">
+    <div class="gallery-category-title">Utakmice</div>
+    <div class="gallery-grid">
+      <button type="button" class="gallery-item" onclick="openLightbox(0)">
+        <img src="images/finale_prve_lige.jpg" alt="Seniorska ekipa OK Libero na finalu Prve lige RS" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(1)">
+        <img src="images/galerija4.jpg" alt="OK Libero na utakmici pred punim tribinama" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(2)">
+        <img src="images/galerija8.jpg" alt="Kadetkinje OK Libero u dogovoru tokom utakmice" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(3)">
+        <img src="images/galerija10.jpg" alt="Igračice OK Libero nakon utakmice" loading="lazy">
+      </button>
+    </div>
+  </div>
+
+  <div class="gallery-category">
+    <div class="gallery-category-title">Treninzi</div>
+    <div class="gallery-grid">
+      <button type="button" class="gallery-item" onclick="openLightbox(4)">
+        <img src="images/skola_odbojke.jpg" alt="Trening škole odbojke OK Libero" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(5)">
+        <img src="images/galerija3.jpg" alt="Trening najmlađih polaznika škole odbojke" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(6)">
+        <img src="images/galerija14.jpg" alt="Trening OK Libero na otvorenom" loading="lazy">
+      </button>
+    </div>
+  </div>
+
+  <div class="gallery-category">
+    <div class="gallery-category-title">Trofeji i proslave</div>
+    <div class="gallery-grid">
+      <button type="button" class="gallery-item" onclick="openLightbox(7)">
+        <img src="images/juniorski_prvaci.jpg" alt="Juniorke OK Libero — prvakinje Republike Srpske" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(8)">
+        <img src="images/kadetkinje_vicesampionke.jpg" alt="Kadetkinje OK Libero — vicešampionke Republike Srpske" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(9)">
+        <img src="images/osvajaci_druge_lige_rs.jpg" alt="OK Libero — osvajačice Druge lige RS" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(10)">
+        <img src="images/galerija9.jpg" alt="Proslava titule na parketu" loading="lazy">
+      </button>
+    </div>
+  </div>
+
+  <div class="gallery-category">
+    <div class="gallery-category-title">Izleti i druženje</div>
+    <div class="gallery-grid">
+      <button type="button" class="gallery-item" onclick="openLightbox(11)">
+        <img src="images/galerija11.jpg" alt="Ekipa OK Libero u obilasku grada na turniru" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(12)">
+        <img src="images/galerija12.jpg" alt="OK Libero na odbojkaškom kampu Volleyball Montenegro" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(13)">
+        <img src="images/galerija13.jpg" alt="Igračice OK Libero na izletu u prirodi" loading="lazy">
+      </button>
+    </div>
+  </div>
+
+  <div class="gallery-category">
+    <div class="gallery-category-title">Klub na okupu</div>
+    <div class="gallery-grid">
+      <button type="button" class="gallery-item" onclick="openLightbox(14)">
+        <img src="images/pocetna.jpg" alt="Sve ekipe OK Libero okupljene u sali" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(15)">
+        <img src="images/galerija1.jpg" alt="Klupsko okupljanje svih uzrasnih kategorija" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(16)">
+        <img src="images/galerija2.jpg" alt="Ekipa OK Libero — timska fotografija" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(17)">
+        <img src="images/galerija5.jpg" alt="Mlađe igračice OK Libero Bijeljina" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(18)">
+        <img src="images/galerija6.jpg" alt="Veliko okupljanje svih selekcija kluba" loading="lazy">
+      </button>
+      <button type="button" class="gallery-item" onclick="openLightbox(19)">
+        <img src="images/galerija7.jpg" alt="Igračice kluba pozdravljaju publiku" loading="lazy">
+      </button>
+    </div>
+  </div>
+
+  <div class="info-banner" style="margin-top:2.5rem;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+    <span>Imate fotografije sa naših treninga ili utakmica? Pošaljite nam ih na info@oklibero.ba i rado ćemo ih dodati u galeriju.</span>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Zatvori">✕</button>
+  <button type="button" class="lightbox-prev" onclick="navLightbox(-1)" aria-label="Prethodna fotografija">‹</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button type="button" class="lightbox-next" onclick="navLightbox(1)" aria-label="Sljedeća fotografija">›</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<script>
+  var galleryImages = [
+    { src: 'images/finale_prve_lige.jpg', alt: 'Seniorska ekipa OK Libero na finalu Prve lige RS' },
+    { src: 'images/galerija4.jpg', alt: 'OK Libero na utakmici pred punim tribinama' },
+    { src: 'images/galerija8.jpg', alt: 'Kadetkinje OK Libero u dogovoru tokom utakmice' },
+    { src: 'images/galerija10.jpg', alt: 'Igračice OK Libero nakon utakmice' },
+    { src: 'images/skola_odbojke.jpg', alt: 'Trening škole odbojke OK Libero' },
+    { src: 'images/galerija3.jpg', alt: 'Trening najmlađih polaznika škole odbojke' },
+    { src: 'images/galerija14.jpg', alt: 'Trening OK Libero na otvorenom' },
+    { src: 'images/juniorski_prvaci.jpg', alt: 'Juniorke OK Libero — prvakinje Republike Srpske' },
+    { src: 'images/kadetkinje_vicesampionke.jpg', alt: 'Kadetkinje OK Libero — vicešampionke Republike Srpske' },
+    { src: 'images/osvajaci_druge_lige_rs.jpg', alt: 'OK Libero — osvajačice Druge lige RS' },
+    { src: 'images/galerija9.jpg', alt: 'Proslava titule na parketu' },
+    { src: 'images/galerija11.jpg', alt: 'Ekipa OK Libero u obilasku grada na turniru' },
+    { src: 'images/galerija12.jpg', alt: 'OK Libero na odbojkaškom kampu Volleyball Montenegro' },
+    { src: 'images/galerija13.jpg', alt: 'Igračice OK Libero na izletu u prirodi' },
+    { src: 'images/pocetna.jpg', alt: 'Sve ekipe OK Libero okupljene u sali' },
+    { src: 'images/galerija1.jpg', alt: 'Klupsko okupljanje svih uzrasnih kategorija' },
+    { src: 'images/galerija2.jpg', alt: 'Ekipa OK Libero — timska fotografija' },
+    { src: 'images/galerija5.jpg', alt: 'Mlađe igračice OK Libero Bijeljina' },
+    { src: 'images/galerija6.jpg', alt: 'Veliko okupljanje svih selekcija kluba' },
+    { src: 'images/galerija7.jpg', alt: 'Igračice kluba pozdravljaju publiku' }
+  ];
+  var lightboxIndex = 0;
+
+  function openLightbox(index) {
+    lightboxIndex = index;
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function navLightbox(delta) {
+    lightboxIndex = (lightboxIndex + delta + galleryImages.length) % galleryImages.length;
+    updateLightbox();
+  }
+
+  function updateLightbox() {
+    var item = galleryImages[lightboxIndex];
+    var img = document.getElementById('lightboxImg');
+    img.src = item.src;
+    img.alt = item.alt;
+    document.getElementById('lightboxCounter').textContent = (lightboxIndex + 1) + ' / ' + galleryImages.length;
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === 'ArrowRight') navLightbox(1);
+  });
+</script>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="OK Libero logo">
+        OK Libero
+      </div>
+      <p class="footer-tagline">Jedan tim. Jedna porodica. Jedan cilj.</p>
+      <p class="footer-copy">© 2025 OK Libero Bijeljina</p>
+    </div>
+    <div>
+      <h4>Stranice</h4>
+      <div class="footer-links">
+        <a href="index.html">Početna</a>
+        <a href="vesti.html">Vesti</a>
+        <a href="istorija.html">Istorija</a>
+        <a href="trofeji.html">Trofeji</a>
+        <a href="treneri.html">Treneri</a>
+        <a href="ekipe.html">Ekipe</a>
+        <a href="galerija.html">Galerija</a>
+        <a href="skola.html">Škola odbojke</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <div class="footer-contact">
+        <span>Bijeljina, RS, BiH</span>
+        <span>info@oklibero.ba</span>
+        <span>Instagram: @odbojkaskiklublibero</span>
+        <span>Facebook: @okliberobijeljina</span>
+      </div>
+      <div class="footer-social">
+        <a href="https://facebook.com/okliberobijeljina" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"/></svg>
+        </a>
+        <a href="https://instagram.com/odbojkaskiklublibero" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3"/><circle cx="16.5" cy="7.5" r="1" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">Odbojkaški klub Libero · Bijeljina · Republika Srpska</div>
+</footer>
+
+</body>
+</html>
