@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     { src: 'images/galerija14.jpg', alt: 'Trening OK Libero na otvorenom' },
     { src: 'images/juniorski_prvaci.jpg', alt: 'Juniorke OK Libero — prvakinje Republike Srpske' },
     { src: 'images/kadetkinje_vicesampionke.jpg', alt: 'Kadetkinje OK Libero — vicešampionke Republike Srpske' },
-    { src: 'images/osvajaci_druge_lige_rs.jpg', alt: 'OK Libero — osvajačice Druge lige RS' },
+    { src: 'images/osvajaci_druge_lige.jpg', alt: 'OK Libero — osvajačice Druge lige RS' },
     { src: 'images/galerija9.jpg', alt: 'Proslava titule na parketu' },
     { src: 'images/galerija11.jpg', alt: 'Ekipa OK Libero u obilasku grada na turniru' },
     { src: 'images/galerija12.jpg', alt: 'OK Libero na odbojkaškom kampu Volleyball Montenegro' },
