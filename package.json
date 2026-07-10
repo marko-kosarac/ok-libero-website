@@ -1,0 +1,10 @@
+{
+  "name": "ok-libero-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "OK Libero Bijeljina — static club website",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  }
+}

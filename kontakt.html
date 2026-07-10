@@ -13,8 +13,10 @@
 <meta property="og:url" content="https://oklibero.ba/kontakt.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23C62828'/%3E%3Cpath d='M12 2C12 2 8 6 8 12C8 18 12 22 12 22' stroke='%23FFFFFF' stroke-width='1.3' fill='none'/%3E%3Cpath d='M2 12C2 12 6 8 12 8C18 8 22 12 22 12' stroke='%23FFFFFF' stroke-width='1.3' fill='none'/%3E%3Cpath d='M4 5C4 5 8 9 12 9C16 9 20 5 20 5' stroke='%23FFFFFF' stroke-width='1.1' fill='none' opacity='0.7'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -41,17 +43,17 @@
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"/></svg>
     </a>
   </div>
-  <button class="hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Meni">☰</button>
+  <button class="hamburger" aria-label="Meni">☰</button>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="index.html">Početna</a>
-  <a href="istorija.html">Istorija</a>
-  <a href="trofeji.html">Trofeji</a>
-  <a href="treneri.html">Treneri</a>
-  <a href="ekipe.html">Ekipe</a>
-  <a href="galerija.html">Galerija</a>
-  <a href="skola.html">Škola odbojke</a>
-  <a href="kontakt.html" class="active">Kontakt</a>
+    <a href="index.html">Početna</a>
+    <a href="istorija.html">Istorija</a>
+    <a href="trofeji.html">Trofeji</a>
+    <a href="treneri.html">Treneri</a>
+    <a href="ekipe.html">Ekipe</a>
+    <a href="galerija.html">Galerija</a>
+    <a href="skola.html">Škola odbojke</a>
+    <a href="kontakt.html" class="active">Kontakt</a>
 </div>
 
 <header class="page-header">
@@ -94,40 +96,6 @@
       <div class="map-embed">
         <iframe src="https://www.google.com/maps?q=Bijeljina,+Republika+Srpska,+Bosna+i+Hercegovina&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokacija — Bijeljina, Republika Srpska"></iframe>
       </div>
-    </div>
-
-    <div class="card" style="padding:2rem;">
-      <h3>Pošaljite nam poruku</h3>
-      <form style="margin-top:1.25rem;" action="https://formsubmit.co/info@oklibero.ba" method="POST">
-        <input type="hidden" name="_subject" value="Nova poruka sa sajta OK Libero">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://oklibero.ba/kontakt.html?poslato=1">
-        <div class="form-row">
-          <label for="ime">Ime i prezime</label>
-          <input type="text" id="ime" name="ime" required>
-        </div>
-        <div class="form-row">
-          <label for="kemail">Email adresa</label>
-          <input type="email" id="kemail" name="email" required>
-        </div>
-        <div class="form-row">
-          <label for="tema">Tema</label>
-          <select id="tema" name="tema" required>
-            <option value="">Odaberite temu</option>
-            <option value="opste">Opšte informacije</option>
-            <option value="upis">Upis u školu</option>
-            <option value="saradnja">Saradnja</option>
-            <option value="sponzorstvo">Sponzorstvo</option>
-            <option value="ostalo">Ostalo</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="poruka">Poruka</label>
-          <textarea id="poruka" name="poruka" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Pošalji poruku →</button>
-      </form>
     </div>
 
   </div>
@@ -178,5 +146,8 @@
   <div class="footer-bottom">Odbojkaški klub Libero · Bijeljina · Republika Srpska</div>
 </footer>
 
+<script src="assets/js/main.js" defer></script>
+
 </body>
 </html>
+

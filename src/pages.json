@@ -1,0 +1,48 @@
+{
+  "index.html": {
+    "title": "OK Libero Bijeljina — Odbojkaški klub",
+    "description": "Odbojkaški klub Libero iz Bijeljine — 150+ članova, 6 ekipa, škola odbojke i deset godina tradicije u Republici Srpskoj.",
+    "ogImage": "images/pocetna.jpg"
+  },
+  "vesti.html": {
+    "title": "Vesti — OK Libero Bijeljina",
+    "description": "Sve vesti Odbojkaškog kluba Libero iz Bijeljine — rezultati, upisi u školu odbojke i klupske novosti.",
+    "ogImage": "images/pocetna.jpg"
+  },
+  "istorija.html": {
+    "title": "Istorija kluba — OK Libero Bijeljina",
+    "description": "Istorija Odbojkaškog kluba Libero iz Bijeljine — od osnivanja 2015. godine do desetogodišnjeg jubileja 2025.",
+    "ogImage": "images/juniorski_prvaci.jpg"
+  },
+  "trofeji.html": {
+    "title": "Trofeji i uspjesi — OK Libero Bijeljina",
+    "description": "Trofeji, medalje i uspjesi Odbojkaškog kluba Libero iz Bijeljine kroz deset godina takmičenja.",
+    "ogImage": "images/juniorski_prvaci.jpg"
+  },
+  "treneri.html": {
+    "title": "Stručni štab — OK Libero Bijeljina",
+    "description": "Upoznajte trenerski i stručni štab Odbojkaškog kluba Libero iz Bijeljine.",
+    "ogImage": "images/trener_bojan.jpg"
+  },
+  "ekipe.html": {
+    "title": "Naše ekipe — OK Libero Bijeljina",
+    "description": "Ekipe Odbojkaškog kluba Libero iz Bijeljine — seniorke, juniorke, kadetkinje i mlađe uzrasne kategorije.",
+    "ogImage": "images/finale_prve_lige.jpg"
+  },
+  "galerija.html": {
+    "title": "Galerija — OK Libero Bijeljina",
+    "description": "Foto galerija Odbojkaškog kluba Libero iz Bijeljine — utakmice, treninzi, škola odbojke i proslave kluba.",
+    "ogImage": "images/pocetna.jpg",
+    "extraScripts": ["assets/js/gallery.js"]
+  },
+  "skola.html": {
+    "title": "Škola odbojke — OK Libero Bijeljina",
+    "description": "Škola odbojke OK Libero Bijeljina — upis u toku za sezonu 2025/2026, uzrast 7–16 godina.",
+    "ogImage": "images/skola_odbojke.jpg"
+  },
+  "kontakt.html": {
+    "title": "Kontakt — OK Libero Bijeljina",
+    "description": "Kontaktirajte Odbojkaški klub Libero iz Bijeljine — adresa, email i društvene mreže.",
+    "ogImage": "images/pocetna.jpg"
+  }
+}
