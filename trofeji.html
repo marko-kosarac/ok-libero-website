@@ -12,11 +12,12 @@
 <meta property="og:image" content="https://oklibero.ba/images/juniorski_prvaci.jpg">
 <meta property="og:url" content="https://oklibero.ba/trofeji.html">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23C62828'/%3E%3Cpath d='M12 2C12 2 8 6 8 12C8 18 12 22 12 22' stroke='%23FFFFFF' stroke-width='1.3' fill='none'/%3E%3Cpath d='M2 12C2 12 6 8 12 8C18 8 22 12 22 12' stroke='%23FFFFFF' stroke-width='1.3' fill='none'/%3E%3Cpath d='M4 5C4 5 8 9 12 9C16 9 20 5 20 5' stroke='%23FFFFFF' stroke-width='1.1' fill='none' opacity='0.7'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
 
@@ -27,10 +28,26 @@
   </a>
   <div class="nav-links">
     <a href="index.html">Početna</a>
-    <a href="istorija.html">Istorija</a>
-    <a href="trofeji.html" class="active">Trofeji</a>
-    <a href="treneri.html">Treneri</a>
-    <a href="ekipe.html">Ekipe</a>
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle active">
+        O klubu
+        <svg class="nav-caret" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6l6 -6"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="istorija.html">Istorija</a>
+        <a href="trofeji.html" class="active">Trofeji</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle">
+        Tim
+        <svg class="nav-caret" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6l6 -6"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="treneri.html">Treneri</a>
+        <a href="ekipe.html">Ekipe</a>
+      </div>
+    </div>
     <a href="galerija.html">Galerija</a>
     <a href="skola.html">Škola odbojke</a>
     <a href="kontakt.html">Kontakt</a>
@@ -46,14 +63,20 @@
   <button class="hamburger" aria-label="Meni">☰</button>
 </nav>
 <div class="nav-mobile" id="navMobile">
-    <a href="index.html">Početna</a>
-    <a href="istorija.html">Istorija</a>
-    <a href="trofeji.html" class="active">Trofeji</a>
-    <a href="treneri.html">Treneri</a>
-    <a href="ekipe.html">Ekipe</a>
-    <a href="galerija.html">Galerija</a>
-    <a href="skola.html">Škola odbojke</a>
-    <a href="kontakt.html">Kontakt</a>
+  <a href="index.html">Početna</a>
+  <details class="nav-mobile-group" open>
+    <summary>O klubu</summary>
+  <a href="istorija.html" class="nav-mobile-sublink">Istorija</a>
+  <a href="trofeji.html" class="nav-mobile-sublink active">Trofeji</a>
+  </details>
+  <details class="nav-mobile-group">
+    <summary>Tim</summary>
+  <a href="treneri.html" class="nav-mobile-sublink">Treneri</a>
+  <a href="ekipe.html" class="nav-mobile-sublink">Ekipe</a>
+  </details>
+  <a href="galerija.html">Galerija</a>
+  <a href="skola.html">Škola odbojke</a>
+  <a href="kontakt.html">Kontakt</a>
 </div>
 
 <header class="page-header">
@@ -65,40 +88,40 @@
   <div class="grid-3-tight">
 
     <div class="card trophy-card">
-      <img src="images/juniorski_prvaci.jpg" alt="OK Libero juniorke šampionke RS 2022">
+      <img src="images/juniorski_prvaci.jpg" alt="OK Libero juniorke šampionke RS 2026">
       <div class="trophy-card-body">
         <h3>🥇 Šampionke Republike Srpske</h3>
-        <div class="trophy-meta">2026 · Juniorska ekipa</div>
+        <div class="trophy-meta">2026 · Ženska Juniorska ekipa</div>
         <span class="badge badge-crveni">Juniorska liga RS</span>
         <p>Juniorska ekipa ponavlja rezultat od prethodne godine i po drugi put zaredom osvaja zlato na Juniorskom turniru RS u Nevesinju.</p>
       </div>
     </div>
 
     <div class="card trophy-card">
-      <img src="images/pionirke_igre_mladih_2025.jpg" alt="OK Libero pioniri vicešampioni RS 2018">
+      <img src="images/pionirke_igre_mladih_2025.jpg" alt="OK Libero pionirke bronzane na Igrama mladih 2025">
       <div class="trophy-card-body">
         <h3>🥉 Osvajačice bronzane medalje Igara mladih Bosne i Hercegovine</h3>
-        <div class="trophy-meta">2025 · Pionirska ekipa</div>
+        <div class="trophy-meta">2025 · Ženska Pionirska ekipa</div>
         <span class="badge badge-crveni">Igre mladih</span>
         <p>Ženska pionirska ekipa osvaja bronzanu medalju na turniru Igara mladih u Sarajevu i time finalizira osvajačku sezonu, jednu od najjačih u istoriji kluba.</p>
       </div>
     </div>
 
     <div class="card trophy-card">
-      <img src="images/juniorke_zlato_2025.jpg" alt="OK Libero juniorke šampionke RS 2022">
+      <img src="images/juniorke_zlato_2025.jpg" alt="OK Libero juniorke šampionke RS 2025">
       <div class="trophy-card-body">
         <h3>🥇 Šampionke Republike Srpske</h3>
-        <div class="trophy-meta">2025 · Juniorska ekipa</div>
+        <div class="trophy-meta">2025 · Ženska Juniorska ekipa</div>
         <span class="badge badge-crveni">Juniorska liga RS</span>
         <p>Ženska juniorska ekipa prvi put u svojoj konkurenciji osvaja zlato na Juniorskom takmičenju RS u Gacku. </p>
       </div>
     </div>
 
     <div class="card trophy-card">
-      <img src="images/kadetkinje_bronza_2025.jpg" alt="OK Libero pioniri vicešampioni RS 2018">
+      <img src="images/kadetkinje_bronza_2025.jpg" alt="OK Libero kadetkinje bronzane na državnom BiH 2025">
       <div class="trophy-card-body">
         <h3>🥉 Osvajačice bronzane medalje Bosne i Hercegovine</h3>
-        <div class="trophy-meta">2025 · Kadetska ekipa</div>
+        <div class="trophy-meta">2025 · Ženska Kadetska ekipa</div>
         <span class="badge badge-crveni">Kadetska liga BiH</span>
         <p>Ženska kadetska ekipa prvi put u svojoj konkurenciji dolazi do državne završnice BiH i osvaja treće mjesto.</p>
       </div>
@@ -106,10 +129,10 @@
 
     
     <div class="card trophy-card">
-      <img src="images/kadetkinje_vicesampionke.jpg" alt="OK Libero kadetkinje vicešampionke RS 2022">
+      <img src="images/kadetkinje_vicesampionke.jpg" alt="OK Libero kadetkinje vicešampionke RS 2025">
       <div class="trophy-card-body">
         <h3>🥈 Vicešampionke Republike Srpske</h3>
-        <div class="trophy-meta">2025 · Kadetska ekipa</div>
+        <div class="trophy-meta">2025 · Ženska Kadetska ekipa</div>
         <span class="badge badge-crveni">Kadetska liga RS</span>
         <p>Ženska kadetska ekipa postaje vicešampion na Kadetskom takmičenju RS u Brčkom nakon dvije pobjede i jednog poraza.</p>
       </div>
@@ -117,10 +140,10 @@
 
 
     <div class="card trophy-card">
-      <img src="images/seniorke_srebro_2025.jpg" alt="OK Libero seniorke finalisti Prve lige RS 2025">
+      <img src="images/seniorke_srebro_2025.jpg" alt="OK Libero seniorke vicešampionke RS 2025">
       <div class="trophy-card-body">
         <h3>🥈 Vicešampionke Republike Srpske</h3>
-        <div class="trophy-meta">2025 · Seniorska ekipa</div>
+        <div class="trophy-meta">2025 · Ženska Seniorska ekipa</div>
         <span class="badge badge-crveni">Prva Liga RS</span>
         <p>Ženska seniorska ekipa dostigla finale Prve lige RS u kojem je osvojila drugo mjesto i time podigla standarde za buduće generacije ovog kluba.</p>
       </div>
@@ -128,80 +151,80 @@
 
 
     <div class="card trophy-card">
-      <img src="images/kadetkinje_bronza_2024.jpg" alt="OK Libero pioniri vicešampioni RS 2018">
+      <img src="images/kadetkinje_bronza_2024.jpg" alt="OK Libero kadetkinje bronzane RS 2024">
       <div class="trophy-card-body">
         <h3>🥉 Osvajačice bronzane medalje Republike Srpske</h3>
-        <div class="trophy-meta">2024 · Kadetska ekipa</div>
+        <div class="trophy-meta">2024 · Ženska Kadetska ekipa</div>
         <span class="badge badge-crveni">Kadetska liga RS</span>
         <p>Ženska kadetska ekipa osvaja bronzanu medalju na Kadetskom takmičenju RS u Ljubinju nakon pobjede nad ekipom OK "Kozara".</p>
       </div>
     </div>
 
     <div class="card trophy-card">
-      <img src="images/kadetkinje_zlato_2023.jpg" alt="OK Libero juniorke šampionke RS 2022">
+      <img src="images/kadetkinje_zlato_2023.jpg" alt="OK Libero kadetkinje šampionke RS 2023">
       <div class="trophy-card-body">
         <h3>🥇 Šampionke Republike Srpske</h3>
-        <div class="trophy-meta">2023 · Kadetska ekipa</div>
+        <div class="trophy-meta">2023 · Ženska Kadetska ekipa</div>
         <span class="badge badge-crveni">Kadetska liga RS</span>
         <p>Ženska kadetska ekipa prvi put u svojoj konkurenciji osvaja zlato na Kadetskom prvenstvu RS u Bijeljini.</p>
       </div>
     </div>
 
     <div class="card trophy-card">
-      <img src="images/pionirke_igre_mladih_2022.jpg" alt="OK Libero juniorke šampionke RS 2022">
+      <img src="images/pionirke_igre_mladih_2022.jpg" alt="OK Libero pionirke šampionke Igara mladih 2022">
       <div class="trophy-card-body">
         <h3>🥇 Šampionke igara mladih Bosne i Hercegovine</h3>
-        <div class="trophy-meta">2022 · Pionirska ekipa</div>
+        <div class="trophy-meta">2022 · Ženska Pionirska ekipa</div>
         <span class="badge badge-crveni">Igre mladih</span>
         <p>Ženska pionirska ekipa drugi put zaredom osvaja titulu Igara mladih u Sarajevu i ponovo se plasirale na Međunarodni turnir u Splitu. </p>
       </div>
     </div>
 
     <div class="card trophy-card">
-      <img src="images/pionirke_igre_mladih_2021.jpg" alt="OK Libero juniorke šampionke RS 2022">
+      <img src="images/pionirke_igre_mladih_2021.jpg" alt="OK Libero pionirke šampionke Igara mladih 2021">
       <div class="trophy-card-body">
         <h3>🥇 Šampionke igara mladih Bosne i Hercegovine</h3>
-        <div class="trophy-meta">2021 · Pionirska ekipa</div>
+        <div class="trophy-meta">2021 · Ženska Pionirska ekipa</div>
         <span class="badge badge-crveni">Igre mladih</span>
         <p>Ženska pionirska ekipa zaokružuje fenomenalnu sezonu osvajanjem Igara mladih u Sarajevu i time sezonu završava sa tri zlatne medalje.</p>
       </div>
     </div>
 
         <div class="card trophy-card">
-      <img src="images/pionirke_zlato_bih.jpg" alt="OK Libero pioniri vicešampioni RS 2018">
+      <img src="images/pionirke_zlato_bih.jpg" alt="OK Libero pionirke šampionke BiH 2021">
       <div class="trophy-card-body">
         <h3>🥇 Državne šampionke Bosne i Hercegovine</h3>
-        <div class="trophy-meta">2021 · Pionirska ekipa</div>
+        <div class="trophy-meta">2021 · Ženska Pionirska ekipa</div>
         <span class="badge badge-crveni">Pionirska liga BiH</span>
         <p>Ženska pionirska ekipa ostvarila je istorijski rezultat osvojivši državno prvenstvo BiH nakon neizvijesne pobjede u finalu nad ekipom OK "Velež" Nevesinje.</p>
       </div>
     </div>
 
         <div class="card trophy-card">
-      <img src="images/pionirke_zlato_2021.jpg" alt="OK Libero pioniri vicešampioni RS 2018">
+      <img src="images/pionirke_zlato_2021.jpg" alt="OK Libero pionirke šampionke RS 2021">
       <div class="trophy-card-body">
         <h3>🥇 Šampionke Republike Srpske</h3>
-        <div class="trophy-meta">2021 · Pionirska ekipa</div>
+        <div class="trophy-meta">2021 · Ženska Pionirska ekipa</div>
         <span class="badge badge-crveni">Pionirska liga RS</span>
-        <p>Ženska pionirska ekipa postala je šampion Juniorskom takmičenja RS nakon pobjede u finalu u Nevesinju.</p>
+        <p>Ženska pionirska ekipa postala je šampion Pionirskog takmičenja RS nakon pobjede u finalu u Nevesinju.</p>
       </div>
     </div>
 
     <div class="card trophy-card">
-      <img src="images/juniorke_bronza_2021.jpg" alt="OK Libero pioniri vicešampioni RS 2018">
+      <img src="images/juniorke_bronza_2021.jpg" alt="OK Libero juniorke bronzane u RS 2021">
       <div class="trophy-card-body">
         <h3>🥉 Osvajačice bronzane medalje Republike Srpske</h3>
-        <div class="trophy-meta">2021 · Juniorska ekipa</div>
+        <div class="trophy-meta">2021 · Ženska Juniorska ekipa</div>
         <span class="badge badge-crveni">Juniorska liga RS</span>
         <p>Ženska juniorska ekipa osvaja bronzanu medalju na Juniorskom takmičenju RS nakon pobjede nad ekipom OK "Gacko" na Palama.</p>
       </div>
     </div>
 
     <div class="card trophy-card">
-      <img src="images/osvajaci_druge_lige.jpg" alt="OK Libero pioniri vicešampioni RS 2018">
+      <img src="images/osvajaci_druge_lige.jpg" alt="OK Libero šampionke RS 2020">
       <div class="trophy-card-body">
         <h3>🥇 Šampionke Republike Srpske</h3>
-        <div class="trophy-meta">2020 · Seniorska ekipa</div>
+        <div class="trophy-meta">2020 · Ženska Seniorska ekipa</div>
         <span class="badge badge-crveni">Seniorska Druga liga RS</span>
         <p>Ženska seniorska ekipa osvaja prvi velki trofej u istoriji kluba i osvaja Drugu ligu RS nakon pobjede nad ekipom OK "Borac", čime je dobila pravo na učešće u Prvoj ligi RS.</p>
       </div>
@@ -218,17 +241,17 @@
     </div>
 
     <div class="card trophy-card">
-      <img src="images/juniori_bronza_2017.jpeg" alt="OK Libero juniorke šampionke RS 2022">
+      <img src="images/juniori_bronza_2017.jpeg" alt="OK Libero juniori bronzani u RS 2017">
       <div class="trophy-card-body">
         <h3>🥉 Osvajači bronzane medalje Republike Srpske</h3>
-        <div class="trophy-meta">2018 · Muška juniorska ekipa</div>
+        <div class="trophy-meta">2017 · Muška juniorska ekipa</div>
         <span class="badge badge-crveni">Juniorska liga RS</span>
         <p>Muška juniorska ekipa osvaja bronzanu medalju na Juniorskom takmičenju RS u Modriči.</p>
       </div>
     </div>
 
     <div class="card trophy-card">
-      <img src="images/pioniri_bronza_2017.jpg" alt="OK Libero juniorke šampionke RS 2022">
+      <img src="images/pioniri_bronza_2017.jpg" alt="OK Libero pioniri bronzani u RS 2017">
       <div class="trophy-card-body">
         <h3>🥉 Osvajači bronzane medalje Republike Srpske</h3>
         <div class="trophy-meta">2017 · Muška pionirska ekipa</div>
@@ -238,7 +261,7 @@
     </div>
 
     <div class="card trophy-card">
-      <img src="images/uspijesi.jpg" alt="OK Libero pioniri vicešampioni RS 2018">
+      <img src="images/uspijesi.jpg" alt="OK Libero pioniri vicešampioni RS 2016">
       <div class="trophy-card-body">
         <h3>🥈 Vicešampioni Republike Srpske</h3>
         <div class="trophy-meta">2016 · Muška juniorska ekipa</div>
@@ -258,13 +281,12 @@
         OK Libero
       </div>
       <p class="footer-tagline">Jedan tim. Jedna porodica. Jedan cilj.</p>
-      <p class="footer-copy">© 2025 OK Libero Bijeljina</p>
+      <p class="footer-copy">© 2015 OK Libero Bijeljina</p>
     </div>
     <div>
       <h4>Stranice</h4>
       <div class="footer-links">
         <a href="index.html">Početna</a>
-        <a href="vesti.html">Vesti</a>
         <a href="istorija.html">Istorija</a>
         <a href="trofeji.html">Trofeji</a>
         <a href="treneri.html">Treneri</a>
@@ -277,17 +299,16 @@
     <div>
       <h4>Kontakt</h4>
       <div class="footer-contact">
-        <span>Bijeljina, RS, BiH</span>
-        <span>info@oklibero.ba</span>
-        <span>Instagram: @odbojkaskiklublibero</span>
-        <span>Facebook: @okliberobijeljina</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/></svg>Ulica Save Mrkalja 38A, 76300 Bijeljina</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"/></svg>+387 65 208 982, Bojan Kvrgić</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"/><path d="M3 7l9 6l9 -6"/></svg><a href="mailto:okliberobn@gmail.com">okliberobn@gmail.com</a></span>
       </div>
       <div class="footer-social">
         <a href="https://facebook.com/okliberobijeljina" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"/></svg>
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"/></svg>
         </a>
         <a href="https://instagram.com/odbojkaskiklublibero" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3"/><circle cx="16.5" cy="7.5" r="1" fill="currentColor"/></svg>
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3"/><circle cx="16.5" cy="7.5" r="1" fill="currentColor"/></svg>
         </a>
       </div>
     </div>

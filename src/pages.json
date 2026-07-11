@@ -2,7 +2,8 @@
   "index.html": {
     "title": "OK Libero Bijeljina — Odbojkaški klub",
     "description": "Odbojkaški klub Libero iz Bijeljine — 150+ članova, 6 ekipa, škola odbojke i deset godina tradicije u Republici Srpskoj.",
-    "ogImage": "images/pocetna.jpg"
+    "ogImage": "images/pocetna.jpg",
+    "extraScripts": ["assets/js/counter.js", "assets/js/slideshow.js"]
   },
   "vesti.html": {
     "title": "Vesti — OK Libero Bijeljina",
@@ -43,6 +44,8 @@
   "kontakt.html": {
     "title": "Kontakt — OK Libero Bijeljina",
     "description": "Kontaktirajte Odbojkaški klub Libero iz Bijeljine — adresa, email i društvene mreže.",
-    "ogImage": "images/pocetna.jpg"
+    "ogImage": "images/pocetna.jpg",
+    "extraHead": ["https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"],
+    "extraScripts": ["https://unpkg.com/leaflet@1.9.4/dist/leaflet.js", "assets/js/map.js"]
   }
 }
