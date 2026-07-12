@@ -41,4 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', function () {
     closeAllDropdowns();
   });
+
+  var scrollCue = document.getElementById('heroScrollCue');
+  var hero = document.getElementById('heroSlideshow');
+  if (scrollCue && hero) {
+    scrollCue.addEventListener('click', function (e) {
+      e.preventDefault();
+      var heroBottom = hero.getBoundingClientRect().bottom + window.pageYOffset;
+      window.scrollTo({ top: heroBottom, behavior: 'smooth' });
+    });
+  }
 });

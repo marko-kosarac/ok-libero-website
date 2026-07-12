@@ -19,7 +19,8 @@ const NAV_ITEMS = [
     label: 'O klubu',
     children: [
       { href: 'istorija.html', label: 'Istorija' },
-      { href: 'trofeji.html', label: 'Trofeji' }
+      { href: 'trofeji.html', label: 'Trofeji' },
+      { href: 'galerija.html', label: 'Galerija' }
     ]
   },
   {
@@ -29,7 +30,6 @@ const NAV_ITEMS = [
       { href: 'ekipe.html', label: 'Ekipe' }
     ]
   },
-  { href: 'galerija.html', label: 'Galerija' },
   { href: 'skola.html', label: 'Škola odbojke' },
   { href: 'kontakt.html', label: 'Kontakt' }
 ];

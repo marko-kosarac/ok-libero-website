@@ -306,7 +306,8 @@ h3 {
 }
 
 .nav-dropdown-menu a.active {
-  color: var(--crvena);
+  color: var(--bijela);
+  border-bottom: 2px solid var(--crvena);
 }
 
 .nav-social {
@@ -447,9 +448,6 @@ h3 {
   display: block;
   break-inside: avoid;
   margin-bottom: 8px;
-}
-
-.footer-links a {
   color: #AAAAAA;
   font-size: 13px;
 }
@@ -650,6 +648,47 @@ h3 {
   gap: 1rem;
   justify-content: center;
   margin-bottom: 1rem;
+}
+
+.hero-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.16);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: var(--bijela);
+  opacity: 0.95;
+  animation: hero-scroll-cue-bounce 2.2s ease-in-out infinite;
+}
+
+.hero-scroll-cue:hover {
+  opacity: 1;
+  background: rgba(255,255,255,0.26);
+}
+
+/* Homepage hero has the stats-bar overlapping its bottom edge, so the cue
+   needs to sit higher, in the gap above the card instead of behind it. */
+.home-top .hero-scroll-cue {
+  bottom: 100px;
+}
+
+@keyframes hero-scroll-cue-bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-cue {
+    animation: none;
+  }
 }
 
 /* ===== STATS BAR ===== */
