@@ -1,35 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var galleryImages = [
-    { src: 'images/finale_prve_lige.jpg', alt: 'Seniorska ekipa OK Libero na finalu Prve lige RS' },
-    { src: 'images/galerija4.jpg', alt: 'OK Libero na utakmici pred punim tribinama' },
-    { src: 'images/galerija8.jpg', alt: 'Kadetkinje OK Libero u dogovoru tokom utakmice' },
-    { src: 'images/galerija10.jpg', alt: 'Igračice OK Libero nakon utakmice' },
-    { src: 'images/skola_odbojke.jpg', alt: 'Trening škole odbojke OK Libero' },
-    { src: 'images/galerija3.jpg', alt: 'Trening najmlađih polaznika škole odbojke' },
-    { src: 'images/galerija14.jpg', alt: 'Trening OK Libero na otvorenom' },
-    { src: 'images/juniorski_prvaci.jpg', alt: 'Juniorke OK Libero — prvakinje Republike Srpske' },
-    { src: 'images/kadetkinje_vicesampionke.jpg', alt: 'Kadetkinje OK Libero — vicešampionke Republike Srpske' },
-    { src: 'images/osvajaci_druge_lige.jpg', alt: 'OK Libero — osvajačice Druge lige RS' },
-    { src: 'images/galerija9.jpg', alt: 'Proslava titule na parketu' },
-    { src: 'images/galerija11.jpg', alt: 'Ekipa OK Libero u obilasku grada na turniru' },
-    { src: 'images/galerija12.jpg', alt: 'OK Libero na odbojkaškom kampu Volleyball Montenegro' },
-    { src: 'images/galerija13.jpg', alt: 'Igračice OK Libero na izletu u prirodi' },
-    { src: 'images/pocetna.jpg', alt: 'Sve ekipe OK Libero okupljene u sali' },
-    { src: 'images/galerija1.jpg', alt: 'Klupsko okupljanje svih uzrasnih kategorija' },
-    { src: 'images/galerija2.jpg', alt: 'Ekipa OK Libero — timska fotografija' },
-    { src: 'images/galerija5.jpg', alt: 'Mlađe igračice OK Libero Bijeljina' },
-    { src: 'images/galerija6.jpg', alt: 'Veliko okupljanje svih selekcija kluba' },
-    { src: 'images/galerija7.jpg', alt: 'Igračice kluba pozdravljaju publiku' }
-  ];
-  var lightboxIndex = 0;
-
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxTitle = document.getElementById('lightboxTitle');
   var lightboxCounter = document.getElementById('lightboxCounter');
   if (!lightbox) return;
 
-  function openLightbox(index) {
-    lightboxIndex = index;
+  var albumImages = [];
+  var albumTitle = '';
+  var albumIndex = 0;
+
+  function openLightbox(images, title, index) {
+    albumImages = images;
+    albumTitle = title;
+    albumIndex = index;
     updateLightbox();
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -41,20 +24,31 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function navLightbox(delta) {
-    lightboxIndex = (lightboxIndex + delta + galleryImages.length) % galleryImages.length;
+    albumIndex = (albumIndex + delta + albumImages.length) % albumImages.length;
     updateLightbox();
   }
 
   function updateLightbox() {
-    var item = galleryImages[lightboxIndex];
+    var item = albumImages[albumIndex];
     lightboxImg.src = item.src;
     lightboxImg.alt = item.alt;
-    lightboxCounter.textContent = (lightboxIndex + 1) + ' / ' + galleryImages.length;
+    lightboxTitle.textContent = albumTitle;
+    lightboxCounter.textContent = (albumIndex + 1) + ' / ' + albumImages.length;
   }
 
-  document.querySelectorAll('.gallery-item').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      openLightbox(Number(btn.dataset.index));
+  document.querySelectorAll('.gallery-category').forEach(function (category) {
+    var titleEl = category.querySelector('.gallery-category-title');
+    var title = titleEl ? titleEl.textContent.trim() : '';
+    var buttons = Array.prototype.slice.call(category.querySelectorAll('.gallery-item'));
+    var images = buttons.map(function (btn) {
+      var img = btn.querySelector('img');
+      return { src: img.getAttribute('src'), alt: img.getAttribute('alt') };
+    });
+
+    buttons.forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        openLightbox(images, title, i);
+      });
     });
   });
 
