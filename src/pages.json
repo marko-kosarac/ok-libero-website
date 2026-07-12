@@ -39,7 +39,8 @@
   "skola.html": {
     "title": "Škola odbojke — OK Libero Bijeljina",
     "description": "Škola odbojke OK Libero Bijeljina — upis u toku za sezonu 2025/2026, uzrast 7–16 godina.",
-    "ogImage": "images/skola_odbojke.jpg"
+    "ogImage": "images/skola_odbojke.jpg",
+    "extraScripts": ["assets/js/slideshow.js"]
   },
   "kontakt.html": {
     "title": "Kontakt — OK Libero Bijeljina",
