@@ -1655,6 +1655,23 @@ blockquote {
     min-height: 460px;
   }
 
+  /* Full-bleed hero slideshows (home, škola) are nearly viewport-tall on
+     desktop; on phones that forces a very narrow/tall crop window that
+     slices off the sides of wide group photos. Shortening the hero here
+     gives background-size:cover a wider window to fill, so slides crop
+     mostly top/bottom (ceiling/floor) instead of left/right (people). */
+  .home-top {
+    min-height: auto;
+  }
+
+  .home-top .hero {
+    min-height: 64vh;
+  }
+
+  .hero--viewport {
+    min-height: 64vh;
+  }
+
   .hero h1 {
     font-size: 32px;
   }
