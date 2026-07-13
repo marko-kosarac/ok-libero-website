@@ -2,8 +2,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var hamburger = document.querySelector('.hamburger');
   var navMobile = document.getElementById('navMobile');
   if (hamburger && navMobile) {
-    hamburger.addEventListener('click', function () {
+    hamburger.addEventListener('click', function (e) {
+      e.stopPropagation();
       navMobile.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!navMobile.classList.contains('open')) return;
+      if (navMobile.contains(e.target) && e.target.tagName !== 'A') return;
+      navMobile.classList.remove('open');
     });
   }
 

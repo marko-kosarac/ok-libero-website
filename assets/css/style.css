@@ -372,6 +372,13 @@ h3 {
   color: #AAAAAA !important;
 }
 
+.nav-mobile-sublink.active {
+  color: var(--crvena) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--crvena);
+  text-underline-offset: 3px;
+}
+
 .nav-mobile.open {
   display: flex;
   position: fixed;
@@ -558,6 +565,7 @@ h3 {
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 64px);
+  min-height: calc(100svh - 64px);
 }
 
 .home-top .hero {
@@ -583,6 +591,7 @@ h3 {
 
 .hero--viewport {
   min-height: calc(100vh - 64px);
+  min-height: calc(100svh - 64px);
 }
 
 .hero::before {
@@ -1464,9 +1473,18 @@ blockquote {
   transition: background 0.2s ease;
 }
 
-.lightbox-close:hover,
-.lightbox-prev:hover,
-.lightbox-next:hover {
+@media (hover: hover) {
+  .lightbox-close:hover,
+  .lightbox-prev:hover,
+  .lightbox-next:hover {
+    background: var(--crvena);
+    border-color: var(--crvena);
+  }
+}
+
+.lightbox-close:active,
+.lightbox-prev:active,
+.lightbox-next:active {
   background: var(--crvena);
   border-color: var(--crvena);
 }
@@ -1608,7 +1626,7 @@ blockquote {
     border-right: none;
   }
 
-  .hero {
+  .hero:not(.hero--viewport) {
     min-height: 460px;
   }
 
