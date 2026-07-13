@@ -26,7 +26,7 @@ const NAV_ITEMS = [
   {
     label: 'Tim',
     children: [
-      { href: 'treneri.html', label: 'Treneri' },
+      { href: 'treneri.html', label: 'Stručni štab' },
       { href: 'ekipe.html', label: 'Ekipe' }
     ]
   },
@@ -38,7 +38,7 @@ const FOOTER_LINKS = [
   { href: 'index.html', label: 'Početna' },
   { href: 'istorija.html', label: 'Istorija' },
   { href: 'trofeji.html', label: 'Trofeji' },
-  { href: 'treneri.html', label: 'Treneri' },
+  { href: 'treneri.html', label: 'Stručni štab' },
   { href: 'ekipe.html', label: 'Ekipe' },
   { href: 'galerija.html', label: 'Galerija' },
   { href: 'skola.html', label: 'Škola odbojke' },
