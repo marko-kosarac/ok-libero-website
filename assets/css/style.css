@@ -1499,6 +1499,29 @@ blockquote {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.contact-social-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid var(--crvena);
+  color: var(--crvena);
+  transition: all 0.2s ease;
+}
+
+.contact-social-buttons a:hover {
+  background: var(--crvena);
+  color: var(--bijela);
+}
+
+.contact-social-buttons svg {
+  width: 20px;
+  height: 20px;
 }
 
 .map-placeholder {
@@ -1788,7 +1811,7 @@ blockquote {
 /* ===== TRAINING LOCATIONS ===== */
 .locations-map {
   width: 100%;
-  height: 420px;
+  height: 320px;
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--bordura);
@@ -1832,7 +1855,7 @@ blockquote {
   }
 
   .locations-map {
-    height: 320px;
+    height: 260px;
   }
 
   .stats-bar {
@@ -1863,13 +1886,12 @@ blockquote {
     min-height: 64vh;
   }
 
-  /* Mobile hero photos are all pre-cropped to the same 820x1460 portrait
-     ratio. Sizing the box to that exact ratio (instead of a vh guess)
-     means background-size:cover has nothing left to crop, and the box
-     naturally reaches about as far down as the home hero + stats-bar do. */
+  /* Taller than .home-top .hero since there's no stats-bar below to carry
+     the layout down to the fold; svh (guaranteed-visible viewport, browser
+     chrome expanded) keeps it from overflowing past the fold on real phones. */
   .hero--viewport {
-    min-height: 0;
-    aspect-ratio: 820 / 1460;
+    min-height: 74vh;
+    min-height: 74svh;
   }
 
   .hero h1 {
@@ -1878,7 +1900,7 @@ blockquote {
 
   .hero-slide {
     background-image: var(--slide-img-mobile, var(--slide-img));
-    background-position: center center;
+    background-position: center 20%;
   }
 
   .home-top .hero-scroll-cue {

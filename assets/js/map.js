@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   var locations = [
-    { name: 'OŠ "Vuk Karadžić"', address: 'Vojvode Stepe 4, Bijeljina', lat: 44.75894, lng: 19.22345 },
+    { name: 'OŠ "Knez Ivo od Semberije"', address: 'Neznanih junaka 46, Bijeljina', lat: 44.75811, lng: 19.20537 },
     { name: 'OŠ "Jovan Dučić"', address: 'Srpske vojske 104, Bijeljina', lat: 44.74726, lng: 19.22130 },
     { name: 'JU OŠ "Dvorovi"', address: 'Karađorđeva 101, Dvorovi', lat: 44.80532, lng: 19.25866 }
   ];
