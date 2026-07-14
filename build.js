@@ -12,6 +12,16 @@ const path = require('path');
 
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
+const NEWS_PAGE_SIZE = 12;
+
+// Resolves a root-relative target (e.g. 'index.html', 'images/logo.png',
+// 'vesti/some-slug.html') into a link usable from a page that itself lives
+// `prefix` levels deep (prefix is '' at the root, '../' inside /vesti/).
+function href(prefix, target) {
+  if (!prefix) return target;
+  if (target.indexOf('vesti/') === 0) return target.slice('vesti/'.length);
+  return prefix + target;
+}
 
 const NAV_ITEMS = [
   { href: 'index.html', label: 'Početna' },
@@ -45,7 +55,7 @@ const FOOTER_LINKS = [
   { href: 'kontakt.html', label: 'Kontakt' }
 ];
 
-function renderDesktopNavLinks(items, activeSlug) {
+function renderDesktopNavLinks(items, activeSlug, prefix) {
   return items
     .map(function (item) {
       if (item.children) {
@@ -53,7 +63,7 @@ function renderDesktopNavLinks(items, activeSlug) {
         const childLinks = item.children
           .map(function (child) {
             const active = child.href === activeSlug ? ' class="active"' : '';
-            return '        <a href="' + child.href + '"' + active + '>' + child.label + '</a>';
+            return '        <a href="' + href(prefix, child.href) + '"' + active + '>' + child.label + '</a>';
           })
           .join('\n');
         return [
@@ -69,12 +79,12 @@ function renderDesktopNavLinks(items, activeSlug) {
         ].join('\n');
       }
       const active = item.href === activeSlug ? ' class="active"' : '';
-      return '    <a href="' + item.href + '"' + active + '>' + item.label + '</a>';
+      return '    <a href="' + href(prefix, item.href) + '"' + active + '>' + item.label + '</a>';
     })
     .join('\n');
 }
 
-function renderMobileNavLinks(items, activeSlug) {
+function renderMobileNavLinks(items, activeSlug, prefix) {
   return items
     .map(function (item) {
       if (item.children) {
@@ -82,7 +92,7 @@ function renderMobileNavLinks(items, activeSlug) {
         const childLinks = item.children
           .map(function (child) {
             const active = child.href === activeSlug ? ' class="nav-mobile-sublink active"' : ' class="nav-mobile-sublink"';
-            return '  <a href="' + child.href + '"' + active + '>' + child.label + '</a>';
+            return '  <a href="' + href(prefix, child.href) + '"' + active + '>' + child.label + '</a>';
           })
           .join('\n');
         return [
@@ -93,20 +103,20 @@ function renderMobileNavLinks(items, activeSlug) {
         ].join('\n');
       }
       const active = item.href === activeSlug ? ' class="active"' : '';
-      return '  <a href="' + item.href + '"' + active + '>' + item.label + '</a>';
+      return '  <a href="' + href(prefix, item.href) + '"' + active + '>' + item.label + '</a>';
     })
     .join('\n');
 }
 
-function renderNav(activeSlug) {
+function renderNav(activeSlug, prefix) {
   return [
     '<nav class="navbar">',
-    '  <a href="index.html" class="nav-logo">',
-    '    <img src="images/logo.png" alt="OK Libero logo">',
+    '  <a href="' + href(prefix, 'index.html') + '" class="nav-logo">',
+    '    <img src="' + href(prefix, 'images/logo.png') + '" alt="OK Libero logo">',
     '    OK Libero',
     '  </a>',
     '  <div class="nav-links">',
-    renderDesktopNavLinks(NAV_ITEMS, activeSlug),
+    renderDesktopNavLinks(NAV_ITEMS, activeSlug, prefix),
     '  </div>',
     '  <div class="nav-social">',
     '    <a href="https://instagram.com/odbojkaskiklublibero" target="_blank" rel="noopener" aria-label="Instagram">',
@@ -119,14 +129,14 @@ function renderNav(activeSlug) {
     '  <button class="hamburger" aria-label="Meni">☰</button>',
     '</nav>',
     '<div class="nav-mobile" id="navMobile">',
-    renderMobileNavLinks(NAV_ITEMS, activeSlug),
+    renderMobileNavLinks(NAV_ITEMS, activeSlug, prefix),
     '</div>'
   ].join('\n');
 }
 
-function renderFooter() {
+function renderFooter(prefix) {
   const links = FOOTER_LINKS.map(function (item) {
-    return '        <a href="' + item.href + '">' + item.label + '</a>';
+    return '        <a href="' + href(prefix, item.href) + '">' + item.label + '</a>';
   }).join('\n');
 
   return [
@@ -134,7 +144,7 @@ function renderFooter() {
     '  <div class="footer-grid">',
     '    <div>',
     '      <div class="footer-logo">',
-    '        <img src="images/logo.png" alt="OK Libero logo">',
+    '        <img src="' + href(prefix, 'images/logo.png') + '" alt="OK Libero logo">',
     '        OK Libero',
     '      </div>',
     '      <p class="footer-tagline">Jedan tim. Jedna porodica. Jedan cilj.</p>',
@@ -168,6 +178,134 @@ function renderFooter() {
   ].join('\n');
 }
 
+function loadNews() {
+  const news = JSON.parse(fs.readFileSync(path.join(SRC, 'news.json'), 'utf8'));
+  return news.slice().sort(function (a, b) {
+    return a.dateISO < b.dateISO ? 1 : (a.dateISO > b.dateISO ? -1 : 0);
+  });
+}
+
+function renderNewsCard(item, prefix) {
+  return [
+    '<a href="' + href(prefix, 'vesti/' + item.slug + '.html') + '" class="card news-card">',
+    '  <div class="news-card-img"><img src="' + href(prefix, item.cover) + '" alt="' + item.coverAlt + '" loading="lazy"></div>',
+    '  <div class="news-card-body">',
+    '    <h3>' + item.title + '</h3>',
+    '    <span class="news-date">' + item.dateDisplay + '</span>',
+    '  </div>',
+    '</a>'
+  ].join('\n');
+}
+
+function renderNewsGrid(items, prefix) {
+  return items.map(function (item) { return renderNewsCard(item, prefix); }).join('\n');
+}
+
+function renderSidebarNewsItem(item, prefix) {
+  return [
+    '<a href="' + href(prefix, 'vesti/' + item.slug + '.html') + '" class="sidebar-news-item">',
+    '  <img src="' + href(prefix, item.cover) + '" alt="' + item.coverAlt + '" loading="lazy">',
+    '  <div class="sidebar-news-item-body">',
+    '    <h4>' + item.title + '</h4>',
+    '    <span class="news-date">' + item.dateDisplay + '</span>',
+    '  </div>',
+    '</a>'
+  ].join('\n');
+}
+
+function renderNewsDetail(item, otherItems, prefix) {
+  const images = item.images.map(function (src, i) {
+    const lazy = i === 0 ? '' : ' loading="lazy"';
+    return '    <img src="' + href(prefix, src) + '" alt="' + item.coverAlt + '"' + lazy + '>';
+  }).join('\n');
+
+  const body = item.body.map(function (p) {
+    return '    <p>' + p + '</p>';
+  }).join('\n');
+
+  const sidebarItems = otherItems.map(function (other) { return renderSidebarNewsItem(other, prefix); }).join('\n');
+
+  return [
+    '<header class="article-header">',
+    '  <span class="badge ' + item.badgeClass + '">' + item.badge + '</span>',
+    '  <h1>' + item.title + '</h1>',
+    '  <div class="article-meta">',
+    '    <span class="article-meta-city">Bijeljina</span>',
+    '    <span class="article-meta-sep">|</span>',
+    '    <span class="article-meta-date">' + item.dateDisplay + '</span>',
+    '    <span class="article-meta-sep">|</span>',
+    '    <span class="article-meta-source">OK Libero</span>',
+    '  </div>',
+    '</header>',
+    '',
+    '<section class="section article-layout">',
+    '  <article class="article-content">',
+    '    <div class="article-images">',
+    images,
+    '    </div>',
+    '    <div class="article-body">',
+    body,
+    '    </div>',
+    '  </article>',
+    '  <aside class="article-sidebar">',
+    '    <h4 class="article-sidebar-title">Ostale aktuelnosti</h4>',
+    '    <div class="article-sidebar-list">',
+    sidebarItems,
+    '    </div>',
+    '  </aside>',
+    '</section>'
+  ].join('\n');
+}
+
+function pageUrl(pageNum) {
+  return pageNum === 1 ? 'vesti.html' : 'vesti/page-' + pageNum + '.html';
+}
+
+function renderPagination(prefix, currentPage, totalPages) {
+  if (totalPages <= 1) return '';
+
+  const numberLinks = [];
+  for (let p = 1; p <= totalPages; p++) {
+    if (p === currentPage) {
+      numberLinks.push('    <span class="page-link active">' + p + '</span>');
+    } else {
+      numberLinks.push('    <a href="' + href(prefix, pageUrl(p)) + '" class="page-link">' + p + '</a>');
+    }
+  }
+
+  const prev = currentPage > 1
+    ? '    <a href="' + href(prefix, pageUrl(currentPage - 1)) + '" class="page-link page-prev">‹ Prethodna</a>'
+    : '    <span class="page-link page-prev disabled">‹ Prethodna</span>';
+
+  const next = currentPage < totalPages
+    ? '    <a href="' + href(prefix, pageUrl(currentPage + 1)) + '" class="page-link page-next">Sledeća ›</a>'
+    : '    <span class="page-link page-next disabled">Sledeća ›</span>';
+
+  return [
+    '  <nav class="pagination" aria-label="Navigacija kroz vijesti">',
+    prev,
+    numberLinks.join('\n'),
+    next,
+    '  </nav>'
+  ].join('\n');
+}
+
+function renderNewsListPage(pageNum, totalPages, pageItems, prefix) {
+  return [
+    '<header class="page-header">',
+    '  <h1>Vesti</h1>',
+    '  <p class="intro-text">Sve novosti iz kluba na jednom mjestu — rezultati, upisi i klupski događaji.</p>',
+    '</header>',
+    '',
+    '<section class="section">',
+    '  <div class="grid-3">',
+    renderNewsGrid(pageItems, prefix),
+    '  </div>',
+    renderPagination(prefix, pageNum, totalPages),
+    '</section>'
+  ].join('\n');
+}
+
 function renderExtraScripts(scripts) {
   if (!scripts || !scripts.length) return '';
   return scripts.map(function (src) {
@@ -185,26 +323,76 @@ function renderExtraHead(links) {
 function build() {
   const layout = fs.readFileSync(path.join(SRC, 'layout.html'), 'utf8');
   const pages = JSON.parse(fs.readFileSync(path.join(SRC, 'pages.json'), 'utf8'));
+  const news = loadNews();
+  const totalNewsPages = Math.max(1, Math.ceil(news.length / NEWS_PAGE_SIZE));
+
+  fs.mkdirSync(path.join(ROOT, 'vesti'), { recursive: true });
 
   Object.keys(pages).forEach(function (slug) {
     const meta = pages[slug];
     const contentPath = path.join(SRC, 'pages', slug);
-    const content = fs.readFileSync(contentPath, 'utf8').trim();
+    const content = fs.readFileSync(contentPath, 'utf8').trim()
+      .split('{{NEWS_HOME}}').join(renderNewsGrid(news.slice(0, 3), ''))
+      .split('{{NEWS_ALL}}').join(renderNewsGrid(news.slice(0, NEWS_PAGE_SIZE), ''))
+      .split('{{PAGINATION}}').join(renderPagination('', 1, totalNewsPages));
 
     const html = layout
       .split('{{TITLE}}').join(meta.title)
       .split('{{DESCRIPTION}}').join(meta.description)
       .split('{{OG_IMAGE}}').join(meta.ogImage)
       .split('{{SLUG}}').join(slug)
-      .split('{{NAV}}').join(renderNav(slug))
+      .split('{{BASE}}').join('')
+      .split('{{NAV}}').join(renderNav(slug, ''))
       .split('{{CONTENT}}').join(content)
-      .split('{{FOOTER}}').join(renderFooter())
+      .split('{{FOOTER}}').join(renderFooter(''))
       .split('{{EXTRA_SCRIPTS}}').join(renderExtraScripts(meta.extraScripts))
       .split('{{EXTRA_HEAD}}').join(renderExtraHead(meta.extraHead));
 
     fs.writeFileSync(path.join(ROOT, slug), html + '\n', 'utf8');
     console.log('built ' + slug);
   });
+
+  news.forEach(function (item) {
+    const outPath = 'vesti/' + item.slug + '.html';
+    const others = news.filter(function (n) { return n.slug !== item.slug; }).slice(0, 2);
+    const content = renderNewsDetail(item, others, '../');
+
+    const html = layout
+      .split('{{TITLE}}').join(item.title + ' — OK Libero Bijeljina')
+      .split('{{DESCRIPTION}}').join(item.description)
+      .split('{{OG_IMAGE}}').join(item.cover)
+      .split('{{SLUG}}').join(outPath)
+      .split('{{BASE}}').join('../')
+      .split('{{NAV}}').join(renderNav('vesti.html', '../'))
+      .split('{{CONTENT}}').join(content)
+      .split('{{FOOTER}}').join(renderFooter('../'))
+      .split('{{EXTRA_SCRIPTS}}').join('')
+      .split('{{EXTRA_HEAD}}').join('');
+
+    fs.writeFileSync(path.join(ROOT, outPath), html + '\n', 'utf8');
+    console.log('built ' + outPath);
+  });
+
+  for (let p = 2; p <= totalNewsPages; p++) {
+    const pageItems = news.slice((p - 1) * NEWS_PAGE_SIZE, p * NEWS_PAGE_SIZE);
+    const outPath = 'vesti/page-' + p + '.html';
+    const content = renderNewsListPage(p, totalNewsPages, pageItems, '../');
+
+    const html = layout
+      .split('{{TITLE}}').join('Vesti — stranica ' + p + ' — OK Libero Bijeljina')
+      .split('{{DESCRIPTION}}').join('Sve vesti Odbojkaškog kluba Libero iz Bijeljine — stranica ' + p + '.')
+      .split('{{OG_IMAGE}}').join('images/pocetna.jpg')
+      .split('{{SLUG}}').join(outPath)
+      .split('{{BASE}}').join('../')
+      .split('{{NAV}}').join(renderNav('vesti.html', '../'))
+      .split('{{CONTENT}}').join(content)
+      .split('{{FOOTER}}').join(renderFooter('../'))
+      .split('{{EXTRA_SCRIPTS}}').join('')
+      .split('{{EXTRA_HEAD}}').join('');
+
+    fs.writeFileSync(path.join(ROOT, outPath), html + '\n', 'utf8');
+    console.log('built ' + outPath);
+  }
 }
 
 build();

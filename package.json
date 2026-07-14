@@ -5,6 +5,7 @@
   "description": "OK Libero Bijeljina — static club website",
   "scripts": {
     "build": "node build.js",
-    "dev": "node build.js --watch"
+    "dev": "node build.js --watch",
+    "new-vijest": "node scripts/new-vijest.js"
   }
 }

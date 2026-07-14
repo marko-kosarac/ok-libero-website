@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "upis-skola-odbojke-2026-2027",
+    "title": "Upis novih polaznika za sezonu 2026/2027 je u toku",
+    "badge": "Škola odbojke",
+    "badgeClass": "badge-crveni",
+    "dateDisplay": "14. jul 2026.",
+    "dateISO": "2026-07-14",
+    "cover": "images/skola_odbojke.jpg",
+    "coverAlt": "Upis u školu odbojke Libero 2026",
+    "images": [
+      "images/skola_odbojke.jpg"
+    ],
+    "description": "Vrata kluba otvorena su za djevojčice i dječake od 7 do 14 godina. Prijave su počele.",
+    "body": [
+      "Vrata kluba otvorena su za djevojčice i dječake od 7 do 14 godina. Prijave su počele.",
+      "Sve informacije o terminima treninga i uslovima upisa zainteresovani mogu dobiti putem kontakt stranice kluba."
+    ]
+  },
+  {
+    "slug": "proslava-deset-godina",
+    "title": "Proslavljena desetogodišnjica — Naših prvih 10",
+    "badge": "Klub",
+    "badgeClass": "badge-sivi",
+    "dateDisplay": "18. jun 2025.",
+    "dateISO": "2025-06-18",
+    "cover": "images/prvih_deset.jpg",
+    "coverAlt": "Proslava desetogodišnjice OK Libero",
+    "images": [
+      "images/prvih_deset.jpg"
+    ],
+    "description": "Svečana manifestacija u Centru za kulturu Semberija okupila članove, roditelje i prijatelje kluba.",
+    "body": [
+      "Svečana manifestacija u Centru za kulturu Semberija okupila članove, roditelje i prijatelje kluba.",
+      "Tokom večeri prisjetili smo se puta koji je klub prešao od osnivanja 2015. godine do danas."
+    ]
+  },
+  {
+    "slug": "juniorke-sampionke-rs-2026",
+    "title": "Juniorke šampionke Republike Srpske za sezonu 2025/2026",
+    "badge": "Rezultati",
+    "badgeClass": "badge-crveni",
+    "dateDisplay": "4. maj 2026.",
+    "dateISO": "2026-05-04",
+    "cover": "images/juniorski_prvaci.jpg",
+    "coverAlt": "Juniorke OK Libero vicešampionke RS 2026",
+    "images": [
+      "images/juniorski_prvaci.jpg"
+    ],
+    "description": "Naše juniorke ostvarile sjajan rezultat na završnom turniru Juniorske lige RS.",
+    "body": [
+      "Naše juniorke ostvarile sjajan rezultat na završnom turniru Juniorske lige RS.",
+      "Čestitamo djevojkama i stručnom štabu na osvojenom priznanju i posvećenom radu tokom cijele sezone."
+    ]
+  }
+]
