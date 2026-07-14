@@ -58,4 +58,40 @@ document.addEventListener('DOMContentLoaded', function () {
       window.scrollTo({ top: heroBottom, behavior: 'smooth' });
     });
   }
+
+  initScrollReveal();
 });
+
+/* Blago pojavljivanje elemenata pri skrolovanju: elementi sa klasom
+   .reveal dobijaju .is-visible kad uđu u viewport. Klase se uklanjaju
+   čim animacija završi, da ne bi trajno preklapale tranziciju na hover
+   (npr. .card:hover) elemenata koji su i sami .reveal. */
+function initScrollReveal() {
+  var items = document.querySelectorAll('.reveal');
+  if (!items.length) return;
+
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        el.classList.add('is-visible');
+        obs.unobserve(el);
+        el.addEventListener(
+          'transitionend',
+          function () { el.classList.remove('reveal', 'is-visible'); },
+          { once: true }
+        );
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+  );
+
+  items.forEach(function (el) { observer.observe(el); });
+}

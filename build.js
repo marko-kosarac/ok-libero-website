@@ -187,7 +187,7 @@ function loadNews() {
 
 function renderNewsCard(item, prefix) {
   return [
-    '<a href="' + href(prefix, 'vesti/' + item.slug + '.html') + '" class="card news-card">',
+    '<a href="' + href(prefix, 'vesti/' + item.slug + '.html') + '" class="card news-card reveal">',
     '  <div class="news-card-img"><img src="' + href(prefix, item.cover) + '" alt="' + item.coverAlt + '" loading="lazy"></div>',
     '  <div class="news-card-body">',
     '    <h3>' + item.title + '</h3>',
@@ -203,7 +203,7 @@ function renderNewsGrid(items, prefix) {
 
 function renderSidebarNewsItem(item, prefix) {
   return [
-    '<a href="' + href(prefix, 'vesti/' + item.slug + '.html') + '" class="sidebar-news-item">',
+    '<a href="' + href(prefix, 'vesti/' + item.slug + '.html') + '" class="sidebar-news-item reveal">',
     '  <img src="' + href(prefix, item.cover) + '" alt="' + item.coverAlt + '" loading="lazy">',
     '  <div class="sidebar-news-item-body">',
     '    <h4>' + item.title + '</h4>',
@@ -226,7 +226,7 @@ function renderNewsDetail(item, otherItems, prefix) {
   const sidebarItems = otherItems.map(function (other) { return renderSidebarNewsItem(other, prefix); }).join('\n');
 
   return [
-    '<header class="article-header">',
+    '<header class="article-header reveal">',
     '  <span class="badge ' + item.badgeClass + '">' + item.badge + '</span>',
     '  <h1>' + item.title + '</h1>',
     '  <div class="article-meta">',
@@ -240,14 +240,14 @@ function renderNewsDetail(item, otherItems, prefix) {
     '',
     '<section class="section article-layout">',
     '  <article class="article-content">',
-    '    <div class="article-images">',
+    '    <div class="article-images reveal">',
     images,
     '    </div>',
-    '    <div class="article-body">',
+    '    <div class="article-body reveal">',
     body,
     '    </div>',
     '  </article>',
-    '  <aside class="article-sidebar">',
+    '  <aside class="article-sidebar reveal">',
     '    <h4 class="article-sidebar-title">Ostale aktuelnosti</h4>',
     '    <div class="article-sidebar-list">',
     sidebarItems,
@@ -292,7 +292,7 @@ function renderPagination(prefix, currentPage, totalPages) {
 
 function renderNewsListPage(pageNum, totalPages, pageItems, prefix) {
   return [
-    '<header class="page-header">',
+    '<header class="page-header reveal">',
     '  <h1>Vesti</h1>',
     '  <p class="intro-text">Sve novosti iz kluba na jednom mjestu — rezultati, upisi i klupski događaji.</p>',
     '</header>',
