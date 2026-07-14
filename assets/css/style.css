@@ -631,8 +631,12 @@ h3 {
 }
 
 .home-top .hero {
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   min-height: 0;
+  /* The stats card overlaps the hero's bottom edge by 70px (see .stats-bar
+     margin), so the hero needs that much extra bottom padding or the last
+     item in the flow — the scroll cue — ends up covered by the card. */
+  padding-bottom: calc(2rem + 70px);
 }
 
 /* ===== HERO (index) ===== */
@@ -654,6 +658,26 @@ h3 {
 .hero--viewport {
   min-height: calc(100vh - 64px);
   min-height: calc(100svh - 64px);
+}
+
+/* Keeps the two hero CTAs on one row instead of wrapping (which would
+   otherwise stack them and push everything below, including the scroll
+   cue, further down) down to small phone widths. */
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-buttons {
+    gap: 0.5rem;
+  }
+
+  .hero-buttons .btn {
+    padding: 11px 14px;
+    font-size: 12.5px;
+  }
 }
 
 .hero::before {
@@ -720,23 +744,22 @@ h3 {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 1rem;
 }
 
 .hero-buttons .btn {
   flex-shrink: 0;
 }
 
+/* Sits in normal flow right after the CTA(s), not pinned to the hero's
+   bottom edge — that way it can never end up hidden behind or clipped by
+   the stats card that overlaps the homepage hero's bottom edge. */
 .hero-scroll-cue {
-  position: absolute;
-  left: 50%;
-  bottom: 28px;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
+  margin: 1.5rem auto 0;
   border-radius: 50%;
   background: rgba(255,255,255,0.16);
   backdrop-filter: blur(4px);
@@ -751,29 +774,14 @@ h3 {
   background: rgba(255,255,255,0.26);
 }
 
-/* Homepage hero has the stats-bar overlapping its bottom edge, so the cue
-   needs to sit higher, in the gap above the card instead of behind it. */
-.home-top .hero-scroll-cue {
-  bottom: 100px;
-}
-
 @keyframes hero-scroll-cue-bounce {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, 8px); }
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0, 8px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-scroll-cue {
     animation: none;
-  }
-}
-
-/* On short mobile viewports the hero has no room between the buttons and
-   the overlapping stats card for this cue without them colliding, so it's
-   hidden — mobile users already scroll without the hint. */
-@media (max-width: 640px) {
-  .hero-scroll-cue {
-    display: none;
   }
 }
 
