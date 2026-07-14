@@ -45,7 +45,8 @@ const NAV_ITEMS = [
 ];
 
 const FOOTER_LINKS = [
-  { href: 'index.html', label: 'Početna' },
+  { href: 'index.html', label: "Početna"},
+  { href: 'vesti.html', label: 'Vijesti' },
   { href: 'istorija.html', label: 'Istorija' },
   { href: 'trofeji.html', label: 'Trofeji' },
   { href: 'treneri.html', label: 'Stručni štab' },
