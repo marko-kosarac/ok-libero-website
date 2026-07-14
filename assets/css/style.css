@@ -717,9 +717,14 @@ h3 {
 
 .hero-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   margin-bottom: 1rem;
+}
+
+.hero-buttons .btn {
+  flex-shrink: 0;
 }
 
 .hero-scroll-cue {
@@ -763,10 +768,12 @@ h3 {
   }
 }
 
-/* On short mobile viewports the hero has no room between the buttons and
-   the overlapping stats card for this cue without them colliding, so it's
-   hidden — mobile users already scroll without the hint. */
-@media (max-width: 640px) {
+/* On short mobile viewports the hero has too little room between the
+   buttons/content and the overlapping stats card for this cue without
+   colliding, so it's hidden there — mobile users already scroll without
+   the hint. Most phones in portrait have plenty of height, so only hide
+   it below a height threshold rather than by width. */
+@media (max-width: 640px) and (max-height: 560px) {
   .hero-scroll-cue {
     display: none;
   }
