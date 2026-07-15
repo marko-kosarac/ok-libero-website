@@ -329,7 +329,7 @@ function renderExtraHead(links) {
   }).join('\n');
 }
 
-const SITE_URL = 'https://oklibero.ba/';
+const SITE_URL = 'https://ok-libero.com/';
 
 function renderSitemap(pages, news, totalNewsPages) {
   const urls = Object.keys(pages).map(function (slug) { return SITE_URL + slug; });

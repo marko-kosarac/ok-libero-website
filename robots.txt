@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oklibero.ba/sitemap.xml
+Sitemap: https://ok-libero.com/sitemap.xml
