@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png'
   });
 
+  // Drži u sinhronizaciji sa lokacijama u src/pages/skola.html (sekcija "Lokacije")
   var locations = [
     { name: 'OŠ "Knez Ivo od Semberije"', address: 'Neznanih junaka 46, Bijeljina', lat: 44.75811, lng: 19.20537 },
     { name: 'OŠ "Jovan Dučić"', address: 'Srpske vojske 104, Bijeljina', lat: 44.74726, lng: 19.22130 },

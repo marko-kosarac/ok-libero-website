@@ -1,13 +1,13 @@
 {
   "index.html": {
     "title": "OK Libero Bijeljina — Odbojkaški klub",
-    "description": "Odbojkaški klub Libero iz Bijeljine — 150+ članova, 6 ekipa, škola odbojke i deset godina tradicije u Republici Srpskoj.",
+    "description": "Odbojkaški klub Libero iz Bijeljine — 300+ članova, 6 ekipa, škola odbojke i deset godina tradicije u Republici Srpskoj.",
     "ogImage": "images/pocetna.jpg",
     "extraScripts": ["assets/js/counter.js", "assets/js/slideshow.js"]
   },
   "vesti.html": {
-    "title": "Vesti — OK Libero Bijeljina",
-    "description": "Sve vesti Odbojkaškog kluba Libero iz Bijeljine — rezultati, upisi u školu odbojke i klupske novosti.",
+    "title": "Vijesti — OK Libero Bijeljina",
+    "description": "Sve vijesti Odbojkaškog kluba Libero iz Bijeljine — rezultati, upisi u školu odbojke i klupske novosti.",
     "ogImage": "images/pocetna.jpg"
   },
   "istorija.html": {
@@ -38,7 +38,7 @@
   },
   "skola.html": {
     "title": "Škola odbojke — OK Libero Bijeljina",
-    "description": "Škola odbojke OK Libero Bijeljina — upis u toku za sezonu 2025/2026, uzrast 7–16 godina.",
+    "description": "Škola odbojke OK Libero Bijeljina — upis u toku za sezonu 2026/2027, uzrast 7–14 godina.",
     "ogImage": "images/skola_odbojke.jpg",
     "extraScripts": ["assets/js/slideshow.js"]
   },

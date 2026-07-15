@@ -45,7 +45,6 @@ const NAV_ITEMS = [
 ];
 
 const FOOTER_LINKS = [
-  { href: 'index.html', label: "Početna"},
   { href: 'vesti.html', label: 'Vijesti' },
   { href: 'istorija.html', label: 'Istorija' },
   { href: 'trofeji.html', label: 'Trofeji' },
@@ -160,7 +159,7 @@ function renderFooter(prefix) {
     '    <div>',
     '      <h4>Kontakt</h4>',
     '      <div class="footer-contact">',
-    '        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/></svg>Ulica Save Mrkalja 38A, 76300 Bijeljina</span>',
+    '        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/></svg>Save Mrkalja 38A, 76300 Bijeljina</span>',
     '        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"/></svg>+387 65 208 982, Bojan Kvrgić</span>',
     '        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"/><path d="M3 7l9 6l9 -6"/></svg><a href="mailto:okliberobn@gmail.com">okliberobn@gmail.com</a></span>',
     '      </div>',
@@ -170,6 +169,15 @@ function renderFooter(prefix) {
     '        </a>',
     '        <a href="https://instagram.com/odbojkaskiklublibero" target="_blank" rel="noopener" aria-label="Instagram">',
     '          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3"/><circle cx="16.5" cy="7.5" r="1" fill="currentColor"/></svg>',
+    '        </a>',
+    '      </div>',
+    '    </div>',
+    '    <div>',
+    '      <h4>Izrada sajta</h4>',
+    '      <div class="footer-credit">',
+    '        <a href="https://www.linkedin.com/in/marko-kosarac" target="_blank" rel="noopener">',
+    '          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4m0 1a1 1 0 0 1 1 -1h14a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1z"/><path d="M8 11l0 5"/><path d="M8 8l0 .01"/><path d="M12 16l0 -5"/><path d="M16 16v-3a2 2 0 0 0 -4 0"/></svg>',
+    '          Marko Košarac',
     '        </a>',
     '      </div>',
     '    </div>',
@@ -279,8 +287,8 @@ function renderPagination(prefix, currentPage, totalPages) {
     : '    <span class="page-link page-prev disabled">‹ Prethodna</span>';
 
   const next = currentPage < totalPages
-    ? '    <a href="' + href(prefix, pageUrl(currentPage + 1)) + '" class="page-link page-next">Sledeća ›</a>'
-    : '    <span class="page-link page-next disabled">Sledeća ›</span>';
+    ? '    <a href="' + href(prefix, pageUrl(currentPage + 1)) + '" class="page-link page-next">Sljedeća ›</a>'
+    : '    <span class="page-link page-next disabled">Sljedeća ›</span>';
 
   return [
     '  <nav class="pagination" aria-label="Navigacija kroz vijesti">',
@@ -294,7 +302,7 @@ function renderPagination(prefix, currentPage, totalPages) {
 function renderNewsListPage(pageNum, totalPages, pageItems, prefix) {
   return [
     '<header class="page-header reveal">',
-    '  <h1>Vesti</h1>',
+    '  <h1>Vijesti</h1>',
     '  <p class="intro-text">Sve novosti iz kluba na jednom mjestu — rezultati, upisi i klupski događaji.</p>',
     '</header>',
     '',
@@ -319,6 +327,26 @@ function renderExtraHead(links) {
   return links.map(function (href) {
     return '<link rel="stylesheet" href="' + href + '">';
   }).join('\n');
+}
+
+const SITE_URL = 'https://oklibero.ba/';
+
+function renderSitemap(pages, news, totalNewsPages) {
+  const urls = Object.keys(pages).map(function (slug) { return SITE_URL + slug; });
+
+  news.forEach(function (item) {
+    urls.push(SITE_URL + 'vesti/' + item.slug + '.html');
+  });
+
+  for (let p = 2; p <= totalNewsPages; p++) {
+    urls.push(SITE_URL + pageUrl(p));
+  }
+
+  const body = urls.map(function (u) {
+    return '  <url>\n    <loc>' + u + '</loc>\n  </url>';
+  }).join('\n');
+
+  return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + '\n</urlset>\n';
 }
 
 function build() {
@@ -380,8 +408,8 @@ function build() {
     const content = renderNewsListPage(p, totalNewsPages, pageItems, '../');
 
     const html = layout
-      .split('{{TITLE}}').join('Vesti — stranica ' + p + ' — OK Libero Bijeljina')
-      .split('{{DESCRIPTION}}').join('Sve vesti Odbojkaškog kluba Libero iz Bijeljine — stranica ' + p + '.')
+      .split('{{TITLE}}').join('Vijesti — stranica ' + p + ' — OK Libero Bijeljina')
+      .split('{{DESCRIPTION}}').join('Sve vijesti Odbojkaškog kluba Libero iz Bijeljine — stranica ' + p + '.')
       .split('{{OG_IMAGE}}').join('images/pocetna.jpg')
       .split('{{SLUG}}').join(outPath)
       .split('{{BASE}}').join('../')
@@ -394,6 +422,9 @@ function build() {
     fs.writeFileSync(path.join(ROOT, outPath), html + '\n', 'utf8');
     console.log('built ' + outPath);
   }
+
+  fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), renderSitemap(pages, news, totalNewsPages), 'utf8');
+  console.log('built sitemap.xml');
 }
 
 build();
