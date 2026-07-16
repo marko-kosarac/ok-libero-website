@@ -20,6 +20,9 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -454,6 +457,7 @@ h3 {
 
 /* ===== FOOTER ===== */
 .footer {
+  margin-top: auto;
   background: var(--crna);
   padding: 3rem 2rem 1.5rem;
 }
