@@ -4,7 +4,7 @@
     "title": "Upis novih polaznika za sezonu 2026/2027 je u toku",
     "badge": "Škola odbojke",
     "badgeClass": "badge-crveni",
-    "dateDisplay": "3. maj 2026.",
+    "dateDisplay": "3. maja 2026.",
     "dateISO": "2026-05-03",
     "cover": "images/skola_odbojke.jpg",
     "coverAlt": "Upis u školu odbojke Libero 2026",
@@ -22,7 +22,7 @@
     "title": "Proslavljena desetogodišnjica — Naših prvih 10",
     "badge": "Klub",
     "badgeClass": "badge-sivi",
-    "dateDisplay": "18. jun 2025.",
+    "dateDisplay": "18. juna 2025.",
     "dateISO": "2025-06-18",
     "cover": "images/prvih_deset.jpg",
     "coverAlt": "Proslava desetogodišnjice OK Libero",
@@ -40,38 +40,25 @@
     "title": "Juniorke šampionke Republike Srpske za sezonu 2025/2026",
     "badge": "Rezultati",
     "badgeClass": "badge-crveni",
-    "dateDisplay": "4. maj 2026.",
+    "dateDisplay": "4. maja 2026.",
     "dateISO": "2026-05-04",
     "cover": "images/juniorski_prvaci.jpg",
-    "coverAlt": "Juniorke OK Libero vicešampionke RS 2026",
+    "coverAlt": "Juniorke OK Libero šampionke RS 2026",
     "images": [
       "images/juniorski_prvaci.jpg"
     ],
     "description": "Naše juniorke ostvarile sjajan rezultat na završnom turniru Juniorske lige RS.",
     "body": [
-      "Naše juniorke ostvarile sjajan rezultat na završnom turniru Juniorske lige RS.",
+      "Naše juniorke ostvarile su sjajan rezultat na završnom turniru Juniorske lige RS.",
+      "Završni turnir odigran je u Nevesinju, gdje su naše juniorke ostvarile 3 pobjede:",
+      "– OK „Libero“-OK „Inova“ Banja Luka 3:2",
+      "– OK „Libero“-OK „HE na Drini“ Višegrad 3:0",
+      "– OK „Libero“-OK „Velež“ Nevesinje 3:0",
+      "Ovim pobjedama naše odbojkašice su osvojile prvenstvo Republike Srpske i obezbjedile plasman na državno prvenstvo Bosne i Hercegovine.",
+      "Pojedinačne nagrade osvojile su: ",
+      "Vanja Jokić - za najboljeg igrača turnira.",
+      "Lara Đurđević - za najboljeg korektora u juniorskoj konkurenciji.",
       "Čestitamo djevojkama i stručnom štabu na osvojenom priznanju i posvećenom radu tokom cijele sezone. Naprijed Libero!"
-    ]
-  },
-  {
-    "slug": "juniorke-na-sirem-spisku-u20-reprezentacije-bih",
-    "title": "Juniorke na širem spisku U20 reprezentacije BiH",
-    "badge": "Klub",
-    "badgeClass": "badge-sivi",
-    "dateDisplay": "15. jul 2026.",
-    "dateISO": "2026-07-15",
-    "cover": "images/nikolina_bih.jpeg",
-    "coverAlt": "Naše odbojkašice na širem spisku U20 reprezentacije BiH",
-    "images": [
-      "images/nikolina_bih.jpeg",
-      "images/vanja_bih.jpg"
-    ],
-    "description": "Naše odbojkašice na širem spisku U20 reprezentacije BiH",
-    "body": [
-      "Na širem spisku Reprezentacije BiH do 20 godina, naše odbojkašice Vanja Jokić i Nikolina Spajić.",
-      "Ovom prilikom želimo da čestitamo odbojkašicama što uspješno predstavljaju sebe kao i svoj klub u najboljem svjetlu.",
-      "Nadamo se da će biti prepoznat kvalitet koje naše odbojkašice posjeduju.",
-      "Naprijed Libero!"
     ]
   },
   {
@@ -79,7 +66,7 @@
     "title": "Naše odbojkašice na Igrama mladih u Sarajevu",
     "badge": "Rezultati",
     "badgeClass": "badge-crveni",
-    "dateDisplay": "17. jul 2026.",
+    "dateDisplay": "17. jula 2026.",
     "dateISO": "2026-07-17",
     "cover": "images/igre_mladih_prva.jpeg",
     "coverAlt": "Dvije ekipe učestvovale u odbojci na pijesku na Igrama mladih u Sarajevu",
@@ -90,9 +77,31 @@
     "description": "Dvije ekipe učestvovale u odbojci na pijesku na Igrama mladih u Sarajevu",
     "body": [
       "Sportske igre mladih u Sarajevu održane su u periodu od 7. do 9. jula 2026. godine.",
-      "Naše odbojkašice učestvovalne su na odbojci na pijesku pod vodstvom trenera Marka Lekića. Jednu ekipu su predstavljale Sanja Pavić i Nikolina Divčić, a drugu ekipu Nađa Rakić i Katarina Bojić.",
-      "Sanja i Nikolina osvojile su treće mjesto dok su Nađa i Katarina zauzele četvrto mjesto.",
+      "Naše odbojkašice učestvovale su na odbojci na pijesku pod vodstvom trenera Marka Lekića. Jednu ekipu su predstavljale Sanja Pavić i Nikolina Divčić, a drugu ekipu Nađa Rakić i Katarina Bojić.",
+      "Sanja i Nikolina osvojile su treće mjesto, dok su Nađa i Katarina zauzele četvrto mjesto.",
       "Čestitke našim djevojkama na ostvarenom uspjehu. Naprijed Libero!"
+    ]
+  },
+  {
+    "slug": "vanja-i-nikolina-na-uzem-spisku-u20-reprezentacije-bih",
+    "title": "Vanja i Nikolina na užem spisku U20 reprezentacije BiH",
+    "badge": "Klub",
+    "badgeClass": "badge-sivi",
+    "dateDisplay": "18. jula 2026.",
+    "dateISO": "2026-07-18",
+    "cover": "images/uzi_spisak_prva.jpeg",
+    "coverAlt": "Odbojkašice na užem spisku reprezentacije",
+    "images": [
+      "images/uzi_spisak_prva.jpeg",
+      "images/uzi_spisak_druga.jpeg",
+      "images/uzi_spisak.jpeg"
+    ],
+    "description": "Naše odbojkašice na užem spisku reprezentacije BiH",
+    "body": [
+      "Velike vijesti za klub stižu nam iz reprezentacije Bosne i Hercegovine.",
+      "Naše odbojkašice, Vanja Jokić i Nikolina Spajić, prošle su na uži spisak U20 reprezentacije BiH. Ovo je dokaz dugogodišnjeg zalaganja i truda naših odbojkašica kao i stručnog štaba.",
+      "Čestitamo Vanji i Nikolini jer neprestano predstavljaju sebe kao i svoj klub i grad na izvanredan način. Nadamo se da će kvalitet i zalaganje naših igračica biti prepoznati.",
+      "Naprijed Libero!"
     ]
   }
 ]
