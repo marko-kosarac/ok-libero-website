@@ -530,19 +530,32 @@ h3 {
   color: var(--bijela);
 }
 
-.footer-credit a {
+.footer-credit {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-left: -2px;
+  gap: 10px;
+}
+
+.footer-credit span {
   color: var(--bijela);
   font-size: 13px;
   font-weight: 600;
   white-space: nowrap;
 }
 
-.footer-credit a:hover {
-  color: var(--crvena);
+.footer-credit .footer-social {
+  gap: 6px;
+  align-items: center;
+}
+
+.footer-credit .footer-social a {
+  display: flex;
+  align-items: center;
+}
+
+.footer-credit .footer-social svg {
+  width: 20px;
+  height: 20px;
 }
 
 .footer-contact {
