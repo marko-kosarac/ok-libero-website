@@ -202,7 +202,10 @@ function loadNews() {
 function renderNewsCard(item, prefix) {
   return [
     '<a href="' + href(prefix, 'vesti/' + item.slug + '.html') + '" class="card news-card reveal">',
-    '  <div class="news-card-img"><img src="' + href(prefix, item.cover) + '" alt="' + item.coverAlt + '" loading="lazy"></div>',
+    '  <div class="news-card-img">',
+    '    <img class="news-card-img-bg" src="' + href(prefix, item.cover) + '" alt="" aria-hidden="true" loading="lazy">',
+    '    <img class="news-card-img-fg" src="' + href(prefix, item.cover) + '" alt="' + item.coverAlt + '" loading="lazy">',
+    '  </div>',
     '  <div class="news-card-body">',
     '    <h3>' + item.title + '</h3>',
     '    <span class="news-date">' + item.dateDisplay + '</span>',
@@ -218,7 +221,10 @@ function renderNewsGrid(items, prefix) {
 function renderSidebarNewsItem(item, prefix) {
   return [
     '<a href="' + href(prefix, 'vesti/' + item.slug + '.html') + '" class="sidebar-news-item reveal">',
-    '  <img src="' + href(prefix, item.cover) + '" alt="' + item.coverAlt + '" loading="lazy">',
+    '  <div class="sidebar-news-item-img">',
+    '    <img class="sidebar-news-item-img-bg" src="' + href(prefix, item.cover) + '" alt="" aria-hidden="true" loading="lazy">',
+    '    <img class="sidebar-news-item-img-fg" src="' + href(prefix, item.cover) + '" alt="' + item.coverAlt + '" loading="lazy">',
+    '  </div>',
     '  <div class="sidebar-news-item-body">',
     '    <h4>' + item.title + '</h4>',
     '    <span class="news-date">' + item.dateDisplay + '</span>',
