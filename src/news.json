@@ -104,5 +104,27 @@
       "Čestitamo Vanji i Nikolini jer neprestano predstavljaju sebe, svoj klub kao i grad Bijeljinu na izvanredan način. Nadamo se da će kvalitet i zalaganje naših igračica biti prepoznati.",
       "Naprijed Libero!"
     ]
+  },
+  {
+    "slug": "nasa-vanja-u-dresu-reprezentacije-na-balkanskom-prvenstvu-u-mostaru",
+    "title": "Naša Vanja u dresu reprezentacije na Balkanskom prvenstvu u Mostaru!",
+    "badge": "Klub",
+    "badgeClass": "badge-sivi",
+    "dateDisplay": "21. avgusta 2026.",
+    "dateISO": "2026-08-21",
+    "cover": "images/vanja_balkan.jpeg",
+    "coverAlt": "NAŠA VANJA U DRESU REPREZENTACIJE",
+    "images": [
+      "images/vanja_balkan.jpeg"
+    ],
+    "description": "Vanja Jokić u dresu reprezentacije",
+    "body": [
+      "Sa velikim ponosom i radošću obavještavamo sve naše članove, navijače i prijatelje kluba da je naša odbojkašica Vanja izborila svoje mjesto u reprezentaciji i da će braniti boje nacionalnog tima na predstojećem Balkanskom prvenstvu za odbojkašice do 20 godina!",
+      "Nakon izuzetno napornih i zahtjevnih priprema koje su trajale od 27. jula do 18. avgusta, Vanja je svojim trudom, zalaganjem i kvalitetom uspjela da se nađe na konačnom, užem spisku reprezentacije.",
+      "Balkansko prvenstvo se održava u Mostaru u periodu od 19. do 23. avgusta. Pored domaćina Bosne i Hercegovine, na turniru učestvuju i snažne selekcije Srbije, Rusije, Bjelorusije, Makedonije, Rumunije, Turske i Bugarske, što dovoljno govori o jačini i značaju ovog takmičenja.",
+      "Ulazak u reprezentaciju i nastup protiv najboljih mladih odbojkašica regiona i Evrope ogromno je priznanje za Vanju, ali i velika potvrda kvalitetnog rada u našem klubu.",
+      "Vanji želimo mnogo sreće, sjajnih poena i uspješnih utakmica na Balkanijadi! Ponosni smo na tebe i navijamo od srca! 💙",
+      "Naprijed Libero!"
+    ]
   }
 ]
