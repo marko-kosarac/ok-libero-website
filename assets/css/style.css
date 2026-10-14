@@ -1241,13 +1241,20 @@ h3 {
 
 /* Crops the sportdc.net header/ad-banner strip, keeps the tabs + standings table, zoomed in a bit */
 .matches-box-embed--standings {
-  height: 515px;
+  --standings-h: 560px;   /* visina vidljivog dijela tabele, ovo podešavaš */
+  --standings-crop: 95px; /* koliko odsijecamo sa vrha (header/reklama sportdc-a) */
+  height: var(--standings-h);
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .matches-box-embed--standings iframe {
-  height: 480px;
-  margin-top: -95px;
-  zoom: 1.15;
+  display: block;
+  width: 100%;
+  height: calc(var(--standings-h) + var(--standings-crop));
+  margin-top: calc(var(--standings-crop) * -1);
+  border: 0;
 }
 
 .matches-table {
