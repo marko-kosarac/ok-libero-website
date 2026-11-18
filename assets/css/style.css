@@ -2264,6 +2264,9 @@ blockquote {
   z-index: 0;
 }
 
+.section--tight-bottom { padding-bottom: 1rem; }
+.section--tight-top    { padding-top: 1rem; }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 960px) {
   .nav-links,
