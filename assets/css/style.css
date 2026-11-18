@@ -1618,6 +1618,9 @@ h3 {
   max-width: 1500px;
 }
 
+.section--tight-bottom { padding-bottom: 1rem; }
+.section--tight-top    { padding-top: 1rem; }
+
 .coach-card img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -2264,8 +2267,6 @@ blockquote {
   z-index: 0;
 }
 
-.section--tight-bottom { padding-bottom: 1rem; }
-.section--tight-top    { padding-top: 1rem; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 960px) {
